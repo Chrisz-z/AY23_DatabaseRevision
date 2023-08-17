@@ -22,12 +22,20 @@ public class RetrieveActivityTextView extends AppCompatActivity {
 
         btnGetNotes = findViewById(R.id.btnGetTasks);
         tvResults = findViewById(R.id.tvResults);
+
         btnGetNotes.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                DBHelper dbh = new DBHelper(RetrieveActivityTextView.this);
+                ArrayList<String> noteList = dbh.getNotesInStrings();
+                dbh.close();
 
+                String noteResults = "";
 
+                for (int i = 0; i < noteList.size(); i++)
+                    noteResults += i + 1 + ". " + noteList.get(i) + "\n";
 
+                tvResults.setText(noteResults);
             }
         });
 
