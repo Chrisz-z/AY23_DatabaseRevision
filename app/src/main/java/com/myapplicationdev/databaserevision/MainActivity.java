@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnInsertRecord, btnRetrieveRecords;
+    Button btnInsertRecord, btnRetrieveRecordsTv, btnRetrieveRecordsLv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnInsertRecord = findViewById(R.id.btnInsertRecord);
-        btnRetrieveRecords = findViewById(R.id.btnGetRecord);
+        btnRetrieveRecordsTv = findViewById(R.id.btnGetRecordTv);
+        btnRetrieveRecordsLv = findViewById(R.id.btnGetRecordLv);
 
         btnInsertRecord.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnRetrieveRecords.setOnClickListener(new View.OnClickListener(){
+        btnRetrieveRecordsTv.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
 
