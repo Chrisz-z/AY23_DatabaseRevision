@@ -37,6 +37,7 @@ public class InsertActivity extends AppCompatActivity {
 
                 db.insertTask(etContent.getText().toString(),Integer.parseInt(etPriority.getText().toString()));
                 db.close();
+                finish();
             }
         });
 
