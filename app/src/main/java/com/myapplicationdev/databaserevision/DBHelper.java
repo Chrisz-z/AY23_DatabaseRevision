@@ -55,7 +55,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public ArrayList<String> getNotesInStrings() {
         ArrayList<String> tasks = new ArrayList<String>();
 
-        String selectQuery = "SELECT " + COLUMN_CONTENT  + " FROM " + TABLE_NOTE;
+        String selectQuery = "SELECT " + COLUMN_ID + "," + COLUMN_CONTENT + "," + COLUMN_PRIORITY  + " FROM " + TABLE_NOTE;
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -63,7 +63,11 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 //data retrieval in String
-                tasks.add(cursor.getString(0));
+                String combinedValue = "ID: " + cursor.getInt(0) + ", Note: " +
+                        cursor.getString(1) + ", Priority: Level " +
+                        cursor.getInt(2);
+
+                tasks.add(combinedValue);
             } while (cursor.moveToNext());
         }
 
