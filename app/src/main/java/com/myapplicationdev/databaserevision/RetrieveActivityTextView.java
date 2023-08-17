@@ -33,7 +33,7 @@ public class RetrieveActivityTextView extends AppCompatActivity {
                 String noteResults = "";
 
                 for (int i = 0; i < noteList.size(); i++)
-                    noteResults += noteList.get(i) + "\n";
+                    noteResults += noteList.get(i) + "\n\n";
 
                 tvResults.setText(noteResults);
             }

@@ -63,8 +63,8 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 //data retrieval in String
-                String combinedValue = "ID: " + cursor.getInt(0) + ", Note: " +
-                        cursor.getString(1) + ", Priority: Level " +
+                String combinedValue = "ID: " + cursor.getInt(0) + "\nNote: " +
+                        cursor.getString(1) + "\nPriority: Level " +
                         cursor.getInt(2);
 
                 tasks.add(combinedValue);
