@@ -34,10 +34,12 @@ public class RetrieveActivityListView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create the DBHelper object, passing in the activity's Context
+                al.clear();
                 DBHelper dbh = new DBHelper(RetrieveActivityListView.this);
                 lv.setAdapter(aa);
                 al.addAll(dbh.getNotesInObjects());
                 aa.notifyDataSetChanged();
+                dbh.close();
             }
         });
 
