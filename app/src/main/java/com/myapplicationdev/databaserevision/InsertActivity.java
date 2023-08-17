@@ -34,7 +34,7 @@ public class InsertActivity extends AppCompatActivity {
                 DBHelper db = new DBHelper(InsertActivity.this);
 
 
-                db.insertTask();
+                db.insertTask(etContent.getText().toString(),Integer.parseInt(etContent.getText().toString()));
                 db.close();
             }
         });
