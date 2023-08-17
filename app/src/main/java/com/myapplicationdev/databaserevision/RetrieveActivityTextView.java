@@ -28,7 +28,6 @@ public class RetrieveActivityTextView extends AppCompatActivity {
 
 
 
-
             }
         });
 
