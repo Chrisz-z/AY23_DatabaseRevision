@@ -7,4 +7,22 @@ public class Note {
 
     //TODO: What should be here?
 
+    public int getId() {
+        return id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    @Override
+    public String toString() {
+        return "id:" + id +
+                "content:" + content +
+                "priority:" + priority;
+    }
 }
