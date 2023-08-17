@@ -45,7 +45,11 @@ public class DBHelper extends SQLiteOpenHelper {
     public void insertTask(String content, int priority){
         SQLiteDatabase db = this.getWritableDatabase();
         //Todo complete this
-
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_CONTENT, content);
+        values.put(COLUMN_PRIORITY, priority);
+        db.insert(TABLE_NOTE, null, values);
+        db.close();
     }
 
     public ArrayList<String> getNotesInStrings() {
@@ -83,6 +87,11 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 //data retrieval in object
+                int id = cursor.getInt(0);
+                String content = cursor.getString(1);
+                int priority = cursor.getInt(2);
+                Note obj = new Note(id, content, priority);
+                notes.add(obj);
 
                 //notes.add(obj);
             } while (cursor.moveToNext());
