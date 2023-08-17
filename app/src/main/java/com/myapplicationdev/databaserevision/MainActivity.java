@@ -2,6 +2,7 @@ package com.myapplicationdev.databaserevision;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,17 +24,28 @@ public class MainActivity extends AppCompatActivity {
         btnInsertRecord.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
-
+                Intent intent = new Intent(MainActivity.this, InsertActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
 
         btnRetrieveRecordsTv.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, RetrieveActivityTextView.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
 
+        btnRetrieveRecordsLv.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RetrieveActivityListView.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
     }
 }
