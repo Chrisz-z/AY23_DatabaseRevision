@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -38,6 +39,8 @@ public class InsertActivity extends AppCompatActivity {
                 db.insertTask(etContent.getText().toString(),Integer.parseInt(etPriority.getText().toString()));
                 db.close();
                 finish();
+
+                Toast.makeText(InsertActivity.this, "Note added", Toast.LENGTH_SHORT).show();
             }
         });
 
