@@ -3,9 +3,14 @@ package com.myapplicationdev.databaserevision;
 public class Note {
     private int id;
     private String content;
-    private String priority;
+    private int priority;
 
-    //TODO: What should be here?
+    public Note(int id, String content, int priority) {
+        this.id = id;
+        this.content = content;
+        this.priority = priority;
+    }
+//TODO: What should be here?
 
     public int getId() {
         return id;
@@ -15,7 +20,7 @@ public class Note {
         return content;
     }
 
-    public String getPriority() {
+    public int getPriority() {
         return priority;
     }
 
